@@ -10,7 +10,7 @@ class SubTaskSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
-    sub_task = SubTaskSerializer(many=True)
+    main_task = SubTaskSerializer(many=True)
 
     def create(self, validated_data):
         temp_task_details = validated_data.pop('sub_task')
